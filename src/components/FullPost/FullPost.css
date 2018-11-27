@@ -1,0 +1,48 @@
+.full-post {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.full-post h2 {
+  font-family: 'Raleway', sans-serif;
+  margin-top: 50px;
+}
+
+.body-text {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 50px;
+  color: #757575;
+  line-height: 22px;
+  font-size: 21px;
+}
+
+.auth-date {
+  margin-top: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+}
+
+.auth-date span {
+  font-weight: bold;
+  color: #757575;
+}
+
+.auth-date p {
+  font-size: 14px;
+}
+
+.author::after {
+  display: inline-block;
+  content: '';
+  height: 10px;
+  width: 3px;
+  position: relative;
+  left: 6px;
+  background-color: #ef6f6c;
+}
+
+.date {
+  margin-left: 10px;
+}

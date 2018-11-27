@@ -1,0 +1,35 @@
+.modalWindow {
+  position: fixed;
+  width: 50%;
+  z-index: 50;
+  opacity: 1;
+  background-color: black;
+  left: 25%;
+  padding-top: 10px;
+  top: 25%;
+  background-color: white;
+  box-shadow: 1px 12px 15px rgba(0, 0, 0, .3);
+  transition: all 0.3s ease-out;
+}
+
+.modalWindow::after {
+  display: inline-block;
+  position: relative;
+  content: '';
+  width: 100%;
+  top: 7px;
+  height: 5px;
+  background-color: #dc3545;
+}
+
+.content-modal {
+  padding-left: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 650px) {
+  .modalWindow {
+    width: 90%;
+    left: 5%;
+  }
+}

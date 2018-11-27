@@ -1,0 +1,35 @@
+.posts-list {
+  height: 100px;
+  margin-top: 10px;
+  background-color: #FFFF;
+  box-shadow: 14px 14px 35px rgba(0, 0, 0, .2);
+  padding-left: 10px;
+  padding-top: 3px;
+}
+
+.posts-list h3 {
+    font-family: 'Raleway', sans-serif;
+    margin-top: 5px;
+    font-size: 28px;
+}
+
+.posts-list p {
+  margin-top: 25px;
+  font-size: 16px;
+}
+
+@media (max-width: 650px) {
+  .posts-list h3 {
+    font-size: 20px;
+  }
+
+  .posts-list p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 321px) {
+  .posts-list h3 {
+    font-size: 17px;
+  }
+}

@@ -1,0 +1,8 @@
+.list-block a {
+  color: black;
+}
+
+.list-block a:hover{
+  text-decoration: none;
+  color: black;
+}

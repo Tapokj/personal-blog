@@ -1,0 +1,39 @@
+.sign-in-form {
+  margin-top: 5%;
+  padding: 20px;
+}
+
+.form-sign-inp {
+  padding: 20px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, .5)
+}
+
+.form-sign-inp h3 {
+  font-family: 'Roboto', sans-serif;
+}
+
+.form-sign-inp input {
+  margin-top: 10px;
+}
+
+.form-sign-inp button {
+  margin-top: 15px;
+  display: inline-block;
+}
+
+.link-signup {
+  position: relative;
+  top: 10px;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  display: inline-block;
+}
+
+.link-forget-pass {
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  right: 0;
+}

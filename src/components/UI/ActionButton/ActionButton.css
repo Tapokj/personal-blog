@@ -1,0 +1,18 @@
+.action-button {
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  right: 25px;
+  bottom: 25px;
+  border-radius: 30px;
+  box-shadow: 1px 10px 15px rgba(0, 0, 0, .4);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.action-button i {
+  font-size: 20px;
+  color: white;
+  margin: 0 auto;
+}

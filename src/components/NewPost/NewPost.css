@@ -1,0 +1,15 @@
+.form-area {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.form-area input{
+  margin-top: 15px;
+}
+
+.form-area textarea {
+  margin-top: 15px;
+  height: 150px;
+  resize: none;
+}
