@@ -31,7 +31,6 @@ class App extends Component {
                 <Route exact path='/posts/:id' component={FullPost} />
                 <div className="container">
                   <Switch>
-
                     <Route exact path='/'          component={Lists}    />
                     {/* Here we protect our route by using authUser which we get from Provider */}
                     {context.state.authUser  ? <Route exact path='/new-post/'    component={NewPost}/> : null  }

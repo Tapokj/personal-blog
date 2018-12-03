@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
-
-import uuid from 'uuid';
+//packages
+import uuid  from 'uuid';
 import axios from 'axios';
-
+//context & API
 import AuthUserContext from '../../hoc/auth/AuthUserContext';
-import firebase from 'firebase/app';
+import firebase        from 'firebase/app';
 import 'firebase/storage';
 //styles
 import './NewPost.css';
