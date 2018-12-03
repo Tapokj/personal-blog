@@ -1,10 +1,12 @@
 .posts-list {
-  height: 100px;
+  height: auto;
   margin-top: 10px;
   background-color: #FFFF;
   box-shadow: 14px 14px 35px rgba(0, 0, 0, .2);
   padding-left: 10px;
   padding-top: 3px;
+  padding-bottom: 2px;
+  width: 100%;
 }
 
 .posts-list h3 {
@@ -14,8 +16,20 @@
 }
 
 .posts-list p {
-  margin-top: 25px;
-  font-size: 16px;
+  margin-top: 15px;
+  font-family: 'Alegreya', serif;
+  font-size: 15px;
+  color: #757575;
+}
+
+@media (max-width: 999px) {
+  .posts-list h3 {
+    font-size: 20px;
+  }
+
+  .posts-list p {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 650px) {

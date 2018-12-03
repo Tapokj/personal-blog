@@ -6,3 +6,9 @@
   text-decoration: none;
   color: black;
 }
+
+.list-latest {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}

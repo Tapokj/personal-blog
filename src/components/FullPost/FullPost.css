@@ -5,9 +5,19 @@
   align-items: center;
 }
 
+.full-post img {
+  margin-top: -15px;
+}
+
+figure.image img {
+  width: 110%;
+  box-shadow: 5px 10px 11px rgba(0, 0, 0, 0.5)
+}
+
 .full-post h2 {
   font-family: 'Raleway', sans-serif;
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .body-text {

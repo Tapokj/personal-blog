@@ -22,6 +22,7 @@ import AuthUserContext    from './hoc/auth/AuthUserContext.js';
 class App extends Component {
   render() {
     //Routes Protection
+
     return (
       <BrowserRouter>
         <AuthUserContext.Consumer>

@@ -1,0 +1,23 @@
+.latest-post {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+.latest-post img {
+  width: 100%;
+}
+
+.latest-post h2 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.latest-post p {
+  font-family: 'Alegreya', serif;
+  font-size: 14px;
+  position: relative;
+  bottom: 5px;
+  color: #757575;
+  width: 80%;
+}

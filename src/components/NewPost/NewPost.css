@@ -13,3 +13,19 @@
   height: 150px;
   resize: none;
 }
+
+.form-editor {
+  margin-top: 5%;
+}
+
+.form-editor input {
+  margin-top: 20px;
+}
+
+#formsubm {
+  margin-top: 10px;
+}
+
+#mceu_10 {
+  margin-top: 20px;
+}

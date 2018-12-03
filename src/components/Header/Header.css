@@ -1,8 +1,7 @@
 .header {
-  dispaly: flex;
   width: 100%;
   background-color: #EF6F6C;
-  height: 45px;
+  height: auto;
   box-shadow: 0 1px 2px rgba(0, 0, 0, .7);
   border-radius: 1px;
 }
@@ -38,7 +37,100 @@
 .left-list {
   display: flex;
   justify-content: space-around;
-  width: 20%;
+  width: 23%;
+}
+
+.mobile-menu {
+  display: none;
+  transition: 0.5s ease-out;
+}
+
+.menu-mob {
+  transition: 0.2s ease-out;
+}
+
+.activeBurgerMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+}
+
+.activeBurgerMenu a {
+  color: white;
+  font-size: 20px;
+}
+
+.activeBurgerMenu a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.activeBurgerMenu li {
+  padding: 20px;
+  width: 100%;
+  border-top: 1px solid #ccc;
+}
+
+.disableMenu {
+  display: none;
+}
+
+#burger-menu {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+#burger-menu span {
+  margin-left: 7px;
+  display: block;
+  margin-top: 7px;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #ffff;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+
+#burger-menu span:nth-child(1) {
+  top: 0px;
+}
+
+#burger-menu span:nth-child(2),#burger-menu span:nth-child(3) {
+  top: 15px;
+}
+
+#burger-menu span:nth-child(4) {
+  top: 30px;
+}
+
+#burger-menu.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+#burger-menu.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+#burger-menu.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+#burger-menu.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
 }
 
 @media ( max-width: 600px ) {
@@ -48,6 +140,22 @@
 
   .left-list {
     width: 50%;
+  }
+}
+
+@media (max-width: 701px ) {
+  .header-list {
+    display: none;
+  }
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    margin-left: -41px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .left-list {
+    justify-content: space-between;
   }
 }
 

@@ -2,6 +2,7 @@
   background-color: #383F51;
   color: white;
   border: 1px solid white;
+  width: 100%;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
   background-color: transparent;
   cursor: pointer;
@@ -11,4 +12,10 @@
 .logout-btn:hover {
   background-color: white;
   color: #ef6f6c;
+}
+
+@media (max-width: 701px) {
+  .logout-btn {
+    padding: 10px;
+  }
 }

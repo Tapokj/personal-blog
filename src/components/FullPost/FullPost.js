@@ -6,6 +6,7 @@ import ActionButton from '../UI/ActionButton/ActionButton';
 import Modal        from '../UI/Modal/Modal';
 import {adminData}  from '../../firebase/adminData';
 import Error        from '../Error/Error';
+import ReactHtmlParser from 'react-html-parser';
 
 import firebase from 'firebase/app';
 import 'firebase/storage';
@@ -79,11 +80,11 @@ class FullPost extends PureComponent {
         <div className='full-post'>
           {this.state.loadImage ? <Spinner/> : <img src={this.state.image} alt='Start Screen' width="100%" height="100%"/>}
           <div className="cointainer col-md-8 justify-content-center">
-          <h2 className='text-center'>{this.state.fullPost.title}</h2>
-          <p className='body-text'>{this.state.fullPost.body}</p>
+          <h2 className='text-center title-post'>{this.state.fullPost.title}</h2>
+          <div>{ReactHtmlParser(this.state.fullPost.body)}</div>
           <div className='container row auth-date'>
             <p className='author'><span>By</span> {this.state.fullPost.author}</p>
-            <p className='date'>{this.state.fullPost.date}</p>
+            <p className='date'>{new Date(this.state.fullPost.date).toLocaleDateString()}</p>
           </div>
           </div>
         </div>
