@@ -6,7 +6,9 @@ import ActionButton from '../UI/ActionButton/ActionButton';
 import Modal        from '../UI/Modal/Modal';
 import {adminData}  from '../../firebase/adminData';
 import Error        from '../Error/Error';
+
 import ReactHtmlParser from 'react-html-parser';
+import { Link }        from 'react-router-dom';
 
 import firebase from 'firebase/app';
 import 'firebase/storage';
@@ -77,48 +79,61 @@ class FullPost extends PureComponent {
 
     if (!this.state.loading) {
       post = (
-        <div className='full-post'>
-          {this.state.loadImage ? <Spinner/> : <img src={this.state.image} alt='Start Screen' width="100%" height="100%"/>}
-          <div className="cointainer col-md-8 justify-content-center">
-          <h2 className='text-center title-post'>{this.state.fullPost.title}</h2>
-          <div>{ReactHtmlParser(this.state.fullPost.body)}</div>
-          <div className='container row auth-date'>
-            <p className='author'><span>By</span> {this.state.fullPost.author}</p>
-            <p className='date'>{new Date(this.state.fullPost.date).toLocaleDateString()}</p>
-          </div>
-          </div>
-        </div>
-      )
-    }
-
-    return (
-      <AuthUserContext.Consumer>
-          {context => context.state.email === adminData.email ? (
+        <AuthUserContext.Consumer>
+          {context => context.state.email === adminData.email ?  (
             <React.Fragment>
-              {post}
+              <div className='full-post'>
+                <div className='img-wrapper'>
+                  {this.state.loadImage ? <Spinner/> : <img src={this.state.image} alt='Start Screen' width="100%" height="100%"/>}
+                </div>
+                <div className="container col-md-8 justify-content-center">
+                  <h2 className='text-center title-post'>{this.state.fullPost.title}</h2>
+                  <div>{ReactHtmlParser(this.state.fullPost.body)}</div>
+                  <div className='container row auth-date'>
+                    <p className='author'><span>By</span> {this.state.fullPost.author}</p>
+                    <p className='date'>{new Date(this.state.fullPost.date).toLocaleDateString()}</p>
+                    <Link className='edit-link' to={`/edit-post/${this.props.match.params.id}`}>Edit</Link>
+                  </div>
+                </div>
+              </div>
               <ActionButton
                 clicked={this.deleteModalHandler}
                 backColor='#dc3545'
                 fontSize='20px'
                 color='white'
                 clazz='trash-alt'
-               />
-            <Modal clickBack={this.deleteModalHandler} show={this.state.show}>
-              <h4>Are you sure?</h4>
-              <p>If you delete this post. Return it will be impossible</p>
-              <div className="container row">
-                <button onClick={this.deletePost} className='btn btn-success'>DELETE</button>
-                <button onClick={this.deleteModalHandler} className='btn btn-danger ml-1'>DECLINE</button>
+              />
+              <Modal clickBack={this.deleteModalHandler} show={this.state.show}>
+                <h4>Are you sure?</h4>
+                <p>If you delete this post. Return it will be impossible</p>
+                <div className="container row">
+                  <button onClick={this.deletePost} className='btn btn-success'>DELETE</button>
+                  <button onClick={this.deleteModalHandler} className='btn btn-danger ml-1'>DECLINE</button>
+                </div>
+              </Modal>
+            </React.Fragment>
+          ) : (
+            <div className='full-post'>
+              {this.state.loadImage ? <Spinner/> : <img src={this.state.image} alt='Start Screen' width="100%" height="100%"/>}
+              <div className="cointainer col-md-8 justify-content-center">
+                <h2 className='text-center title-post'>{this.state.fullPost.title}</h2>
+                <div>{ReactHtmlParser(this.state.fullPost.body)}</div>
+                <div className='container row auth-date'>
+                  <p className='author'><span>By</span> {this.state.fullPost.author}</p>
+                  <p className='date'>{new Date(this.state.fullPost.date).toLocaleDateString()}</p>
+                </div>
               </div>
-            </Modal>
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            {post}
-          </React.Fragment>
-        )}
-      </AuthUserContext.Consumer>
+            </div>
+          )}
+        </AuthUserContext.Consumer>
 
+      )
+    }
+
+    return (
+      <React.Fragment>
+        {post}
+      </React.Fragment>
     )
   }
 }

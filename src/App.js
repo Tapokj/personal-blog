@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch }   from 'react-router-dom';
 
 //components
 import FullPost from './components/FullPost/FullPost';
@@ -9,8 +9,10 @@ import Lists    from './components/Lists/Lists';
 import Header   from './components/Header/Header';
 import SignIn   from './components/SignIn/SignIn';
 import SignUp   from './components/SignUp/SignUp';
+import EditPost from './components/EditPost/EditPost';
 import ForgetPassword   from './components/ForgetPassword/ForgetPassword';
 import UpdatePassword   from './components/UpdatePassword/UpdatePassword';
+
 //styles
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -29,14 +31,15 @@ class App extends Component {
           {context => (
             <div className="App">
               <Header emailData={context.state.email} />
-                <Route exact path='/posts/:id' component={FullPost} />
-                <div className="container">
+                <div className="blog-app">
                   <Switch>
                     <Route exact path='/'          component={Lists}    />
+                    <Route exact path='/posts/:id' component={FullPost} />
                     {/* Here we protect our route by using authUser which we get from Provider */}
-                    {context.state.authUser  ? <Route exact path='/new-post/'    component={NewPost}/> : null  }
-                    {!context.state.authUser ? <Route exact path='/auth/sign-in' component={SignIn} /> : null  }
-                    {!context.state.authUser ? <Route exact path='/auth/sign-up' component={SignUp} /> : null  }
+                    {context.state.authUser  ? <Route exact path='/new-post/'     component={NewPost}/> : null  }
+                    {context.state.authUser  ? <Route exact path='/edit-post/:id' component={EditPost}/>: null  }
+                    {!context.state.authUser ? <Route exact path='/auth/sign-in'  component={SignIn} /> : null  }
+                    {!context.state.authUser ? <Route exact path='/auth/sign-up'  component={SignUp} /> : null  }
                     {!context.state.authUser ? <Route exact path='/auth/forget-pass/' component={ForgetPassword} /> : null}
                     {context.state.authUser  ? <Route exact path='/auth/update-pass/' component={UpdatePassword} /> : null}
                   </Switch>
@@ -44,6 +47,7 @@ class App extends Component {
             </div>
           )}
         </AuthUserContext.Consumer>
+
       </BrowserRouter>
     );
   }

@@ -120,7 +120,7 @@ class Lists extends Component {
       <AuthUserContext.Consumer>
           {/* we are rendering action button for adding new post only when user has admin roots */}
           {context => context.state.email === adminData.email ? (
-            <div className='container col-md-12 list-block'>
+            <div className='container col-md-6 list-block'>
                 <Route exact path='/post/:id' component={FullPost} />
               <div className="list-latest col-md-12">
                   {latestPost}
